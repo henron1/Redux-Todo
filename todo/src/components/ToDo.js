@@ -1,6 +1,8 @@
 import React from 'react';
+import {connect} from 'react-redux';
+import { addNewTodo, toggleTodo } from '../actions/Actions';
 
-class ToDoList extends React.Component {
+class TodoList extends React.Component {
     state ={
         newTodo: ''
     }
@@ -39,3 +41,10 @@ class ToDoList extends React.Component {
         );
     } 
 }
+
+const mapStateToProps = state => ({
+    todos:state.todos
+});
+
+export default connect (
+    mapStateToProps, { addNewTodo, toggleTodo })(TodoList);
