@@ -20,7 +20,7 @@ function reducer(state = initialState, action) {
             case TOGGLE_TODO:
                 return {
                     ...state,
-                    friends: state.todos.map((todo, index) => action.payload === index ? { ...todo, completed: !todo.completed } : todo)
+                    todos: state.todos.map((todo, index) => action.payload === index ? { ...todo, completed: !todo.completed } : todo)
                 }
 
         default: 

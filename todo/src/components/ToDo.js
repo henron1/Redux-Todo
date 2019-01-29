@@ -13,7 +13,7 @@ class TodoList extends React.Component {
 
     addTodo = e => {
         e.preventDefault();
-        this.props.addNewTodo(this.state.new)
+        this.props.addNewTodo(this.state.newTodo)
     }
 
     toggleTodo = (e, index) => {
@@ -29,7 +29,7 @@ class TodoList extends React.Component {
                 <div>
                     {this.props.todos.map((todo, index) => (
                         <h4 onClick={e => this.toggleTodo(e, index)} key={index}>
-                            {todo.name}
+                            {todo.value}
                         </h4>
                     ))}
                 </div>
